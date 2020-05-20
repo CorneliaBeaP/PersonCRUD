@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a new Person</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+<table>
+    <form action="#" th:action="@{/save}" th:object="${thisperson}" method="post">
+        <tr>
+            <td>
+                First name
+            </td>
+            <td>
+                <input type="text" th:field="*{firstName}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Last name
+            </td>
+            <td>
+                <input type="text" th:field="*{lastName}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Address
+            </td>
+            <td>
+                <input type="text" th:field="*{address}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Zipcode
+            </td>
+            <td>
+                <input type="text" th:field="*{zipcode}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City
+            </td>
+            <td>
+                <input type="text" th:field="*{city}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email
+            </td>
+            <td>
+                <input type="text" th:field="*{email}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gender
+            </td>
+            <td>
+                <input type="text" th:field="*{gender}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Born year
+            </td>
+            <td>
+                <input type="text" th:field="*{bornYear}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" class="btn btn-light">Save</button>
+            </td>
+        </tr>
+    </form>
+
+</table>
+
+
+</body>
+</html>

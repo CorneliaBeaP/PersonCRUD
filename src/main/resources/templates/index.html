@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index - Persons</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+
+<a href="add" class="btn btn-info">Add new person</a><br/>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>ADDRESS</th>
+        <th>ZIPCODE</th>
+        <th>CITY</th>
+        <th>EMAIL</th>
+        <th>GENDER</th>
+        <th>YEAR BORN</th>
+        <th>EDIT</th>
+        <th>DELETE</th>
+    </tr>
+
+    <tr th:each="person : ${personList}">
+        <td th:text="${person.id}">ID</td>
+        <td th:text="${person.firstName}">FIRST NAME</td>
+        <td th:text="${person.lastName}">LAST NAME</td>
+        <td th:text="${person.address}">ADDRESS</td>
+        <td th:text="${person.zipcode}">ZIPCODE</td>
+        <td th:text="${person.city}">CITY</td>
+        <td th:text="${person.email}">EMAIL</td>
+        <td th:text="${person.gender}">GENDER</td>
+        <td th:text="${person.bornYear}">YEAR BORN</td>
+        <td><a th:href="@{'/edit/'+${person.id}}">Edit</a></td>
+        <td><a th:href="@{'/delete/'+${person.id}}">Delete</a></td>
+
+
+    </tr>
+</table>
+
+</body>
+</html>
