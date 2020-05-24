@@ -24,15 +24,15 @@ public class PersonService {
     }
 
     @Transactional
-    public void delete(long id){
+    public void delete(long id) {
         personRepository.deleteById(id);
     }
 
-    public List<Person> listAllPersons(){
+    public List<Person> listAllPersons() {
         return personRepository.findAll();
     }
 
-    public Optional<Person> findPerson(long id){
+    public Optional<Person> findPerson(long id) {
         return personRepository.findById(id);
     }
 }

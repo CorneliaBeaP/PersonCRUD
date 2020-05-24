@@ -48,9 +48,9 @@ public class PersonController {
     }
 
     @GetMapping("/edit/{id}")
-    public String goToEditPage(@PathVariable Long id, Model model){
+    public String goToEditPage(@PathVariable Long id, Model model) {
         Optional<Person> person = personService.findPerson(id);
-        if(person.isPresent()){
+        if (person.isPresent()) {
             model.addAttribute("personToEdit", person.get());
             return "edit_person_page";
         }
@@ -58,7 +58,7 @@ public class PersonController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deletePerson(@PathVariable Long id){
+    public String deletePerson(@PathVariable Long id) {
         personService.delete(id);
         return "redirect:/";
     }
